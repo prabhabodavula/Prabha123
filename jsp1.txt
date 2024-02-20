@@ -1,0 +1,149 @@
+JSP
+====
+JSP stands for Java Server Pages.
+
+JSP is a dynamic web resource program which is used to develop web applications.
+
+JSP is used for presentation layer/logic.
+
+
+Limitations with Servlets
+==========================
+> To work with servlets strong java knowledge is required.
+
+> It is not suitable for non-java programmers.
+
+> It does not give any implicit oject.
+  (Object which can be used directly without any configuration is called implicit object)
+
+> Configuration of each servlet program in web.xml file is mandatory.
+
+> Handling exceptions are mandatory.
+
+> We can't maintain HTML code and java code seperately.
+
+To overcome this limitations Sun Micro System introduced JSP.
+
+
+Advantages of JSP 
+==================
+> To work with JSP strong java knowledge is not required.
+
+> It is suitable for java and non-java programmers.
+
+> It gives 9 implicit objects.
+
+> Configuration of jsp program in web.xml file is not mandatory.
+
+> Handling exceptions are optional.
+
+> We can maintain HTML code and Java code seperately.
+
+> It supports tag based language.
+
+> It allows us to work with custom tags.
+
+> It gives all the features of servlets.
+
+First web application development having JSP as dynamic web resource program
+============================================================================
+
+Deployment Directory structure
+-----------------------------
+JspApp1
+|
+|---Java Resources
+|
+|---Web Content
+	|
+	|---ABC.jsp
+	|
+	|---WEB-INF
+		|
+		|----web.xml 
+Note:
+-----
+In above application we need to add "servlet-api.jar" file in project build path.
+
+Servlet container will execute servlet program.
+JSP container will execute jsp program.
+But to execute JSP program jsp container will take the support of servlet container. 
+
+
+ABC.jsp
+-------
+<center>
+	<h1>
+		Current Date and Time : <br>
+		
+		<%
+			java.util.Date d=new java.util.Date();
+			out.println(d);
+		%>
+	</h1>
+</center>
+
+web.xml
+-------
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+  <welcome-file-list>
+  	<welcome-file>ABC.jsp</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+Request url
+----------
+	http://localhost:2525/JspApp1/
+
+
+Note:
+-----
+	To see the output in JSP we need to replace ecj-4.2.2.jar file in Tomcat/lib folder.
+	ex:
+		http://www.java2s.com/Code/Jar/e/Downloadecj422jar.htm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,273 @@
+Junit
+=======
+Junit is a unit testing framework.
+
+Unit testing is important for TDD(Test Driven Development). 
+
+Unit testing is a process of checking a piece of code working as per the requirement or not.
+
+To perform unit testing we need to create test suit or test cases.
+
+Steps to perform unit testing
+-------------------------------
+step1:
+-----
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+-----
+	Create a java project i.e JunitProj.
+	ex:
+		File --> new --> project --> java project --> next --> 
+		Project Name : JunitProj  --> Next --> Finish.
+
+step3:
+------
+	Create a com.ihub.www package inside "src" folder.
+	ex:
+		Right click to src --> new --> package --> 
+		Name: com.ihub.www -->finish 
+
+step4:
+------
+	Create a java program i.e DemoApp.java.
+	ex:
+		right click to com.ihub.www --> new --> class -->
+		class name : DemoApp  --> finish. 
+	
+DemoApp.java
+-----------
+package com.ihub.www;
+
+public class DemoApp 
+{
+	public String concatination(String str1,String str2)
+	{
+		return str1+str2;
+	}
+	
+	public int sum(int a,int b)
+	{
+		return a+b;
+	}
+}
+
+step5:
+------
+	Create Test Cases for java methods.
+	ex:
+		right click to DemoApp.java --> new --> other --> Junit --> test case
+		---> next --> Next --> select methods(concatination and sum) --> finish -->ok.
+
+DemoAppTest.java
+---------------
+package com.ihub.www;
+
+import junit.framework.TestCase;
+
+public class DemoAppTest extends TestCase 
+{
+
+	public void testConcatination() {
+		DemoApp da=new DemoApp();
+		String result=da.concatination("ihub", "talent");
+		assertEquals("ihubtalent", result);
+	}
+
+	public void testSum() {
+		
+		DemoApp da=new DemoApp();
+		int result=da.sum(10, 20);
+		assertEquals(30,result);
+	}
+
+}
+
+step6:
+-----
+	Run the Junit test cases
+	ex:
+		right click to DemoAppTest.java --> run as --> junit test .
+
+
+step7:
+------
+	Green color indicates test cases are passed.
+	Brown color indicates test cases are failed.
+
+
+Maven
+=======
+Maven is a project building management tool.
+
+Maven project contains pom.xml file.
+
+POM stands for Project Object Model.
+
+A pom.xml file contains dependencies, plugins, Goals, packaging and etc.
+
+Diagram: jsp6.1
+
+Steps to develop Maven project
+------------------------------
+step1:
+-----
+	Launch eclipse IDE by choosing workspace location.
+
+step2:
+-----	
+	create a dynamic web project.
+	ex:	
+		File --> new --> dynamic project --> Name : MavenProj
+		---> Next --> Next --> generate web.xml file --> finish.
+
+step3:
+-----
+	Convert dynamic web project to Maven project.
+	ex:
+		Right click to dynamic project --> configure -->
+		convert to maven project --> 
+		Group ID : com.ihub.www
+		Artifact ID : MavenProj
+		Name : MavenProj
+		Description: Demostration on Maven project --> finish.
+
+step4:
+------
+	Create a "ABC.jsp" file inside "Web Content" folder.
+	ex:
+	ABC.jsp
+	-------
+	<center>
+		<h1>
+			This is Maven Project Demo
+		</h1>
+	</center>
+		
+step5:
+-----
+	Add "servlet-api.jar" file manven depedency inside pom.xml file.
+	ex:
+	pom.xml
+	------
+	-
+	-
+	 <dependencies>
+  		<dependency>
+    			<groupId>javax.servlet</groupId>
+    			<artifactId>servlet-api</artifactId>
+    			<version>2.5</version>
+    			<scope>provided</scope>
+		</dependency>
+  	</dependencies>
+	<build>
+	--
+	--
+	--
+
+step6:
+-----
+	Run the maven project.
+	ex:
+		Right click to MavenProject --> run as --> run on server.
+		
+step7:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:2525/MavenProj/ABC.jsp
+
+
+How to convert Maven project or Dynamic project to war file
+===========================================================
+step1:
+------
+	Make sure Dynamic or Maven project is ready in eclipse IDE.
+
+
+step2:
+----
+	convert Dynamic or Maven project to war file .
+	ex:
+		Right click to MavenProj --> export --> war file -->
+		Destination : Desktop(choose) --> open --> finish.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
